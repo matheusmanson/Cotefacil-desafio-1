@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+AU+VIC+WA+NT+Dots:wght@600&family=Oleo+Script:wght@400;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to right, green, rgb(6, 252, 6));
+}
+
+.App {
+  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 25px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.267);
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  margin-top: 15px;
+}
+
+.botaoAdicionar {
+  text-align: center;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.botaoAdicionar:hover {
+  background-color: #ff9900;
+  
+}
+
+input {
+  padding: 10px;
+  font-size: 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.text1 {
+  font-family: "Oleo Script", system-ui;
+  font-size: 50px;
+  font-style: normal;
+  text-align: center;
+}
+
+
+
+#lixo, #edit {
+  border-radius: 50px;
+}
+
+#lixo:hover {
+  background: linear-gradient(to left, #ff0000bd, #eedada);
+  transform: scale(1.1);
+  box-shadow: 1px 2px rgba(0, 0, 0, 0.274);
+}
+
+#lixo:active {
+  transform: scale(0.91);
+  background-color: rgba(255, 3, 3, 0.432);
+}
+
+#edit {
+  background-color: #ffffffd5;
+  color: rgb(0, 0, 0);
+}
+
+#edit:hover {
+  background: linear-gradient(to left, #73ff00bd, #daeede);
+  transform: scale(1.1);
+  box-shadow: 1px 2px rgba(0, 0, 0, 0.274);
+}
+
+
+#edit.ativo {
+  background-color: #ff9900;
+  color: white;
+  font-weight: bold;
+}
+
+button {
+  margin-left: 10px;
+  font-size: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#add {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 5px;
+}
+
+li {
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input {
+  display: none; /* Oculta o checkbox padrão */
+}
+
+.checkmark {
+  width: 30px; 
+  height: 30px; 
+  background-color: #f1f1f1; 
+  border: 2px solid #008075; 
+  border-radius: 4px; 
+  position: relative; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-container input:checked + .checkmark {
+  background-color: #008075; /* Cor de fundo quando marcado */
+  border-color: #006954;
+}
+
+.checkbox-container input:checked + .checkmark::after {
+  content: "";
+  display: block;
+  width: 25px; /* Ajustei a largura para ser mais visível */
+  height: 8px;
+  border-radius: 50px;
+  background-color: rgb(7, 0, 0); /* Cor do "check" */
+  position: absolute;
+  left: 2px;
+  top: 10px;
+  transform: rotate(40deg); /* Ângulo do "check" */
+  transition: all 0.3s ease; /* Transição suave ao clicar */
+}
+
+/* Adicionando uma animação para a checkmark */
+.checkbox-container input:checked + .checkmark {
+  animation: checkmark-pulse 0.4s ease;
+}
+
+@keyframes checkmark-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.adicionarbuttom {
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.tarefa-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  
+}
+
+.tarefa-text {
+  flex: 1;
+  width: 500px;
+  margin: 10px;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+
+  
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
+}
+
+/* Media Queries para tornar o site responsivo */
+
+@media (max-width: 768px) {
+  .App {
+    max-width: 90%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .text1 {
+    font-family: "Oleo Script", system-ui;
+    font-size: 40px;
+    font-style: normal;
+    text-align: center;
+  }
+
+  input {
+    font-size: 16px;
+    padding: 8px;
+    margin-right: 5px;
+  }
+
+  .tarefa-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tarefa-text {
+    width: 100%;
+    margin: 10px 0;
+    text-align: left;
+  }
+
+  .botoes {
+    margin-top: 10px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .checkbox-container {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  input {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+
+    .App {
+     width: 100px;
+    }
+
+
+
+  .tarefa-text {
+    margin: 5px 0;
+  }
+
+  .botoes {
+    gap: 5px;
+  }
+}
